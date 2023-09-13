@@ -7,6 +7,11 @@ To run
 xhost +local:
 sudo docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/video0:/dev/video0 my_image
 ```
+For people using podman, use the following command
+```
+sudo podman run --security-opt label=disable -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/video0:/dev/video0 my_image
+```
+
 after running, one should set 
 
 ```
